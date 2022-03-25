@@ -1,6 +1,11 @@
+import Link from "next/link";
+
 export default function Post({ post }) {
   return (
-    <div className="post">
+    <div>
+      <Link href="/">
+        <a>Go Home</a>
+      </Link>
       <h1>{post.attributes.Title}</h1>
     </div>
   );
@@ -19,7 +24,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
